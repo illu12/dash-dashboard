@@ -4,8 +4,8 @@ import plotly.express as px
 import pandas as pd
 from analysis import Analysis
 
-app = Dash(__name__)
-server=app.server
+dash_app = dash.Dash(__name__)
+app=dash_app.server
 
 # Data
 order_data = Analysis.getData("my_shop_data.xlsx","order")
@@ -62,7 +62,7 @@ app.layout = html.Div(children=[
     ],style={"width":"50%","display":"block","margin-left":"auto","margin-right":"auto","margin-bottom":"3rem"}),
 ])
 
-@app.callback(
+@dash_app.callback(
     Output("a", "figure"),
     Input("a_dropdown", "value"))
 def update_bar_chart(name):
@@ -74,7 +74,7 @@ def update_bar_chart(name):
         barmode="group")
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    dash_app.run_server(debug=True)
 
 
 
