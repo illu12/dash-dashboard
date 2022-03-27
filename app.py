@@ -39,7 +39,7 @@ fig3 = px.bar(
     title="Total sales by product",
     barmode="group")
 
-app.layout = html.Div(children=[
+dash_app.layout = html.Div(children=[
     html.Div([
         html.H1(children="Delivery 1"),
         dcc.Graph(
