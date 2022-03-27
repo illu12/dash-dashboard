@@ -5,7 +5,7 @@ import pandas as pd
 from analysis import Analysis
 
 app = Dash(__name__)
-
+server=app.server
 
 # Data
 order_data = Analysis.getData("my_shop_data.xlsx","order")
