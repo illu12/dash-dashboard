@@ -3,6 +3,7 @@ from dash import *
 import plotly.express as px
 import pandas as pd
 from analysis import Analysis
+import openpyxl
 
 dash_app = dash.Dash(__name__)
 app=dash_app.server
