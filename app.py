@@ -39,6 +39,7 @@ fig3 = px.bar(
     title="Total sales by product",
     barmode="group")
 
+names = Analysis.combineFirstLastName(employee_data)
 dash_app.layout = html.Div(children=[
     html.Div([
         html.H1(children="Delivery 1"),
@@ -48,8 +49,8 @@ dash_app.layout = html.Div(children=[
         ),
         dcc.Dropdown(
             id="a_dropdown",
-            options=Analysis.combineFirstLastName(employee_data),
-            value=Analysis.combineFirstLastName(employee_data)[0],
+            options=names,
+            value=names[0],
             clearable=False,
         ),
         dcc.Graph(
